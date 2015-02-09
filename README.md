@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/fkooman/php-lib-rest-plugin-simplesaml.svg?branch=master)](https://travis-ci.org/fkooman/php-lib-rest-plugin-simplesaml)
-
 # Introduction
 This plugin enables one to use SAML authentication with `fkooman/rest` using
 [simpleSAMLphp](https://simplesamlphp.org). 
