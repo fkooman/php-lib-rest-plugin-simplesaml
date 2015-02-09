@@ -16,7 +16,7 @@
 * limitations under the License.
 */
 
-namespace fkooman\OAuth\Server;
+namespace fkooman\Rest\Plugin\SimpleSaml;
 
 use fkooman\Http\Request;
 use fkooman\Rest\ServicePluginInterface;
@@ -32,7 +32,7 @@ class SimpleSamlAuthentication implements ServicePluginInterface
     /** @var string|null */
     private $userIdAttribute;
 
-    public function __construct($simpleSamlPath, $authSource = 'default', $userIdAttribute = null)
+    public function __construct($simpleSamlPath, $authSource = 'default-sp', $userIdAttribute = null)
     {
         $simpleSamlRequire = sprintf('%s/lib/_autoload.php', $simpleSamlPath);
         if (!file_exists($simpleSamlRequire) || !is_file($simpleSamlRequire) || !is_readable($simpleSamlRequire)) {

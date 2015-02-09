@@ -30,19 +30,21 @@ try {
     // use persistent NameID value to determine the user ID
     $service->registerBeforeEachMatchPlugin(
         new SimpleSamlAuthentication(
-            '/var/www/simplesaml',
-            'default'
+            '/var/www/simplesamlphp',
+            'default-sp'
         )
     );
 
 #    // use an attribute to determine the user ID
 #    $service->registerBeforeEachMatchPlugin(
 #        new SimpleSamlAuthentication(
-#            '/var/www/simplesaml',
-#            'default',
+#            '/var/www/simplesamlphp',
+#            'default-sp',
 #            'eduPersonPrincipalName'
 #        )
 #    );
+
+    $service->setDefaultRoute('/getMyUserId');
 
     $service->get(
         '/getMyUserId',
