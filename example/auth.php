@@ -28,7 +28,7 @@ try {
     $service = new Service();
 
     // use persistent NameID value to determine the user ID
-    $service->registerBeforeEachMatchPlugin(
+    $service->registerOnMatchPlugin(
         new SimpleSamlAuthentication(
             '/var/www/simplesamlphp',
             'default-sp'
@@ -55,12 +55,5 @@ try {
 
     $service->run()->sendResponse();
 } catch (Exception $e) {
-    if ($e instanceof HttpException) {
-        $response = $e->getHtmlResponse();
-    } else {
-        // we catch all other (unexpected) exceptions and return a 500
-        $e = new InternalServerErrorException($e->getMessage());
-        $response = $e->getHtmlResponse();
-    }
-    $response->sendResponse();
+    Service::handleException($e)->sendResponse();
 }

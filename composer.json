@@ -15,7 +15,7 @@
     "license": "Apache-2.0",
     "name": "fkooman/rest-plugin-simplesaml",
     "require": {
-        "fkooman/rest": "~0.6.7",
+        "fkooman/rest": "~0.7.1",
         "php": ">=5.3.3"
     }
 }
