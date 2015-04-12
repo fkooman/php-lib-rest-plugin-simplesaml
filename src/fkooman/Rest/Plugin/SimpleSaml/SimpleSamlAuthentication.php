@@ -43,7 +43,7 @@ class SimpleSamlAuthentication implements ServicePluginInterface
         $this->userIdAttribute = $userIdAttribute;
     }
 
-    public function execute(Request $request)
+    public function execute(Request $request, array $routeConfig)
     {
         if (null === $this->userIdAttribute) {
             // use persistent NameID as user ID

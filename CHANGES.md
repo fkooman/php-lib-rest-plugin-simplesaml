@@ -1,5 +1,8 @@
 # Release History
 
+## 0.2.1
+- update to latest `fkooman/rest`
+
 ## 0.2.0
 - update to latest `fkooman/rest`
 
